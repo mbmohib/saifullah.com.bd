@@ -25,7 +25,7 @@ module.exports = {
         path: "./src/images/"
       },
       __key: "images"
-    },
+    }
     // {
     //   resolve: `gatsby-plugin-google-fonts-with-attributes`,
     //   options: {
@@ -38,17 +38,17 @@ module.exports = {
     //     }
     //   }
     // }
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Source Sans Pro`,
-            subsets: [`latin`],
-            variants: [`400`, `600`, `700`]
-          }
-        ]
-      }
-    }
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Source Sans Pro`,
+    //         subsets: [`latin`],
+    //         variants: [`400`, `600`, `700`]
+    //       }
+    //     ]
+    //   }
+    // }
   ]
 };
