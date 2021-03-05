@@ -26,29 +26,5 @@ module.exports = {
       },
       __key: "images"
     }
-    // {
-    //   resolve: `gatsby-plugin-google-fonts-with-attributes`,
-    //   options: {
-    //     fonts: [`Source Sans Pro\:400,600,700`],
-    //     display: "swap",
-    //     attributes: {
-    //       rel: "stylesheet preload",
-    //       onLoad: "this.onload=null;this.rel='stylesheet'",
-    //       as: "style"
-    //     }
-    //   }
-    // }
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Source Sans Pro`,
-    //         subsets: [`latin`],
-    //         variants: [`400`, `600`, `700`]
-    //       }
-    //     ]
-    //   }
-    // }
   ]
 };

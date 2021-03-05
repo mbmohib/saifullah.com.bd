@@ -39,7 +39,6 @@ export default function SEO({ description, lang, meta, title }) {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={metaDescription} />
         {/* <meta name="twitter:image" content={image} /> */}
-        /* source-sans-pro-regular - latin */
       </Helmet>
     </>
   );

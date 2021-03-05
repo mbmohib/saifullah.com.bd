@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "saifullah.com.bd",
-  "author": "Mohib",
+  "author": "mohib",
   "keywords": [
     "gatsby"
   ],
@@ -12,16 +12,13 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "preload-fonts": "gatsby-preload-fonts"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
-    "gatsby-plugin-google-fonts-with-attributes": "^1.0.7",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-sitemap": "^3.0.0",
