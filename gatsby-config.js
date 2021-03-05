@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "saifullah.com.bd"
+    title: "saifullah.com.bd",
+    description: `Abdul Hi Muhammad Saifullah, Religious Consultant at E.B solutions Limited & Khatib at Masjidul Jumawa Complex`,
+    author: `monkef.com`,
+    siteUrl: "https://saifullah.com.bd"
   },
   plugins: [
     "gatsby-plugin-styled-components",
