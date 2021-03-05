@@ -1,11 +1,13 @@
 import * as React from "react";
-import { Layout, Text } from "../components";
+import { Layout, Text, Box } from "../components";
 
 export default function IndexPage() {
   return (
     <Layout>
-      <p>Hello from layout</p>
-      <Text>Hello from Text</Text>
+      <Box mt={4}>
+        <p>Hello from layout</p>
+        <Text>Hello from Text</Text>
+      </Box>
     </Layout>
   );
 }
