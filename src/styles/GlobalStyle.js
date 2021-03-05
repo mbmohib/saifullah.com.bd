@@ -7,7 +7,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --bg-color: #f5f5f5;
+    --bg-color: #ffffff;
     --text-color: rgba(0, 0, 0, 0.87);
     --light-color-1: #ffffff;
     --dark-color-1: rgba(0, 0, 0, 0.87);

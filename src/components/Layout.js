@@ -1,8 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { Header, Footer } from "./";
+import { Header, Footer, SEO } from "./";
 import { GlobalStyle } from "../styles";
 
 const LayoutWrapper = styled.div`
@@ -16,37 +15,31 @@ const Main = styled.div`
   flex-grow: 1;
 `;
 
-const Layout = ({ children }) => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
+export default function Layout({ title, children }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
           }
         }
-      `}
-      render={data => (
-        <>
-          <GlobalStyle />
-          <LayoutWrapper>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <Main>{children}</Main>
-            <Footer />
-          </LayoutWrapper>
-        </>
-      )}
-    />
+      }
+    `
   );
-};
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
-
-export default Layout;
+  return (
+    <>
+      <GlobalStyle />
+      <SEO title={title || data.site.siteMetadata.title} />
+      <LayoutWrapper>
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
+      </LayoutWrapper>
+    </>
+  );
+}
 
 // /* source-sans-pro-regular - latin */
 // @font-face {

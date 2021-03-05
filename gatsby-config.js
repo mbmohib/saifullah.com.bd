@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "saifullah.com.bd",
+    title: "Abdul Hi Muhammad Saifullah",
     description: `Abdul Hi Muhammad Saifullah, Religious Consultant at E.B solutions Limited & Khatib at Masjidul Jumawa Complex`,
     author: `monkef.com`,
     siteUrl: "https://saifullah.com.bd"
@@ -26,16 +26,28 @@ module.exports = {
       },
       __key: "images"
     },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts-with-attributes`,
+    //   options: {
+    //     fonts: [`Source Sans Pro\:400,600,700`],
+    //     display: "swap",
+    //     attributes: {
+    //       rel: "stylesheet preload",
+    //       onLoad: "this.onload=null;this.rel='stylesheet'",
+    //       as: "style"
+    //     }
+    //   }
+    // }
     {
-      resolve: `gatsby-plugin-google-fonts-with-attributes`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        fonts: [`Source Sans Pro\:400,600,700`],
-        display: "swap",
-        attributes: {
-          rel: "stylesheet preload",
-          onLoad: "this.onload=null;this.rel='stylesheet'",
-          as: "style"
-        }
+        fonts: [
+          {
+            family: `Source Sans Pro`,
+            subsets: [`latin`],
+            variants: [`400`, `600`, `700`]
+          }
+        ]
       }
     }
   ]
