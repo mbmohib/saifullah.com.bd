@@ -25,6 +25,18 @@ module.exports = {
         path: "./src/images/"
       },
       __key: "images"
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts-with-attributes`,
+      options: {
+        fonts: [`Source Sans Pro\:400,600,700`],
+        display: "swap",
+        attributes: {
+          rel: "stylesheet preload",
+          onLoad: "this.onload=null;this.rel='stylesheet'",
+          as: "style"
+        }
+      }
     }
   ]
 };
