@@ -46,12 +46,14 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --bg-color: #ffffff;
     --text-color: rgba(0, 0, 0, 0.87);
+    --text-color-light: #ffffff;
     --light-color-1: #ffffff;
     --dark-color-1: rgba(0, 0, 0, 0.87);
     --dark-color-2: #cdcdcd;
-    --primary-color: #3498db;
+    --primary-color: #1D7E7A;
     --primary-font: 'Source Sans Pro', sans-serif;
     --normal-weight: 400;
+    --semi-bold-weight: 600;
     --bold-weight: 700;
     --light-weight: 300;
   }
@@ -71,46 +73,13 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: var(--primary-font);
-    color: var(--text-color);
     background-color: var(--bg-color);
+    color: var(--text-color);
     font-weight: var(--normal-weight);
-  }
-  p {
-    margin-bottom: 1rem;
   }
   a {
     text-decoration: none;
     color: var(--primary-color);
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--secondary-font);
-    font-weight: var(--light-weight);
-    margin-top: 1.2rem;
-    margin-bottom: 0.625rem;
-  }
-  h1 {
-    font-size: 1.912rem;
-    line-height: 1.3;
-  }
-  h2 {
-    font-size: 1.616rem;
-  }
-  h3 {
-    font-size: 1.471rem;
-  }
-  h4 {
-    font-size: 1.3rem;
-  }
-  h5 {
-    font-size: 1.243rem;
-  }
-  h6 {
-    font-size: 1.132rem;
   }
   img {
     max-width: 100%;

@@ -15,8 +15,7 @@ export default function Header() {
       <Container>
         <Flex height="100px" justifyContent="space-between">
           <Link to="/">
-            {/* <Image width="50" src={logo} alt="" /> */}
-            {/* <Image width="50" src={logo} alt="" /> */}
+            <Image width="50" src={logo} alt="" />
           </Link>
           <Nav />
         </Flex>
