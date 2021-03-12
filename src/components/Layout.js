@@ -30,7 +30,6 @@ export default function Layout({ title, children }) {
 
   return (
     <>
-      <GlobalStyle />
       <SEO title={title || data.site.siteMetadata.title} />
       <LayoutWrapper>
         <Header />

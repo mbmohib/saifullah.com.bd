@@ -1,15 +1,5 @@
 import * as React from "react";
-import {
-  Layout,
-  Text,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Link,
-  Image,
-  Grid
-} from "../components";
+import { Layout, Box, Button, Flex, Link, Image } from "../components";
 import { RightArrow } from "../icons";
 import styled from "styled-components";
 import heroImage from "../images/hero-image.jpg";
@@ -21,13 +11,6 @@ const Hero = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-`;
-
-const HeroContent = styled.div`
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `;
 
 const AboutContent = styled.div`
@@ -56,39 +39,32 @@ export default function IndexPage() {
   return (
     <Layout title="Home">
       <Hero>
-        <Container>
-          <HeroContent>
-            <Text color="light" variant="heading3">
-              Lorem ipsum
-            </Text>
-            <Text color="light" variant="heading4">
-              I’m
-            </Text>
-            <Text color="light" variant="heading1" as="h1">
-              Lorem ipsum dolor sit amet
-            </Text>
-          </HeroContent>
-        </Container>
+        <div className="container mx-auto">
+          <div className="flex flex-col justify-center">
+            <p className="text-xl">Lorem ipsum</p>
+            <p className="text-lg">I’m</p>
+            <h1 className="text-3xl">Lorem ipsum dolor sit amet</h1>
+          </div>
+        </div>
       </Hero>
-      <Container py={6}>
-        <Flex>
-          <Text mr={3} color="primary" variant="heading2">
-            About me
-          </Text>
+      <div className="container mx-auto py-6">
+        <div className="flex">
+          <h2 className="text-2xl">About me</h2>
           <Box ml={4} pl={4} borderLeft="4px solid var(--primary-color)">
-            <Text variant="heading3">
+            <h3 className="text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit
-            </Text>
-            <Text variant="heading3">Lorem ipsum dolor sit amet</Text>
+              <br />
+              Lorem ipsum dolor sit amet
+            </h3>
           </Box>
-        </Flex>
+        </div>
 
         <AboutContent>
           <Box zIndex="99" gridArea="thumb">
             <Image src={profileImage} alt="Profile Image" />
           </Box>
           <Box gridArea="content">
-            <Text>
+            <p className="text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aspernatur dicta vel laudantium. Quas nam quis magnam? Distinctio
               optio, laboriosam dolores corporis id architecto ducimus beatae
@@ -97,22 +73,22 @@ export default function IndexPage() {
               laudantium. Quas nam quis magnam? Distinctio optio, laboriosam
               dolores corporis id architecto ducimus beatae placeat. Consequatur
               veritatis fugit ipsum.
-            </Text>
+            </p>
 
-            <Link mt={1} to="">
-              Read More <RightArrow ml={1} />
+            <Link className="mt-1" to="">
+              Read More <RightArrow className="ml-1" />
             </Link>
           </Box>
           <AboutFooter>
             <Box gridArea="1 / 2" alignSelf="center">
-              <Flex>
+              <div className="flex">
                 <Button>Click Me</Button>
-                <Button ml={3}>Click Me</Button>
-              </Flex>
-              <Link to="" mt={4}>
+                <Button className="ml-3">Click Me</Button>
+              </div>
+              <Link to="" className="mt-4">
                 Lorem ipsum dolor
               </Link>
-              <Link to="" mt={2}>
+              <Link to="" className="mt-2">
                 Lorem ipsum dolor
               </Link>
             </Box>
@@ -120,7 +96,7 @@ export default function IndexPage() {
         </AboutContent>
 
         <Box height="100px" width="100%" backgroundColor="red"></Box>
-      </Container>
+      </div>
     </Layout>
   );
 }
