@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Container>
-        <Flex height="100px" justifyContent="space-between">
+        <Flex height="100px" justifyContent="space-between" alignItems="center">
           <Link to="/">
             <Image width="50" src={logo} alt="" />
           </Link>

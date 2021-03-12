@@ -34,7 +34,7 @@ const AboutContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 4rem;
-  margin-top: 32px;
+  margin-top: 40px;
   grid-template-rows: 2fr 2fr 2fr 1fr;
   grid-template-areas:
     "thumb content"
@@ -47,6 +47,9 @@ const AboutFooter = styled.div`
   background: var(--secondary-color);
   grid-column: 1 / 3;
   grid-row: 3 / 5;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 4rem;
 `;
 
 export default function IndexPage() {
@@ -100,7 +103,20 @@ export default function IndexPage() {
               Read More <RightArrow ml={1} />
             </Link>
           </Box>
-          <AboutFooter></AboutFooter>
+          <AboutFooter>
+            <Box gridArea="1 / 2" alignSelf="center">
+              <Flex>
+                <Button>Click Me</Button>
+                <Button ml={3}>Click Me</Button>
+              </Flex>
+              <Link to="" mt={4}>
+                Lorem ipsum dolor
+              </Link>
+              <Link to="" mt={2}>
+                Lorem ipsum dolor
+              </Link>
+            </Box>
+          </AboutFooter>
         </AboutContent>
 
         <Box height="100px" width="100%" backgroundColor="red"></Box>
