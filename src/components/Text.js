@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 
 const Text = styled.p`
-  font-size: 18px;
-
   ${({ variant }) =>
     variant === "heading1" &&
     css`
@@ -32,10 +30,18 @@ const Text = styled.p`
     `}
 
   ${({ variant }) =>
+    variant === "paragraph1" &&
+    css`
+      font-size: 18px;
+      font-weight: var(--semi-bold-weight);
+    `}
+
+  ${({ variant }) =>
     variant === "subtitle" &&
     css`
       font-size: 18px;
     `}
+    
 
   ${({ color }) =>
     color === "primary" &&
@@ -55,5 +61,9 @@ const Text = styled.p`
       color: var(--text-color-light);
     `}
 `;
+
+Text.defaultProps = {
+  variant: "paragraph1"
+};
 
 export default Text;

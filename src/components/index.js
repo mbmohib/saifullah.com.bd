@@ -10,3 +10,4 @@ export { default as Link } from "./Link";
 export { default as Container } from "./Container";
 export { default as Nav } from "./Nav";
 export { default as Flex } from "./Flex";
+export { default as Grid } from "./Grid";

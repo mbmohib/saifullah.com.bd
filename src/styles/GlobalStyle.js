@@ -51,11 +51,15 @@ const GlobalStyle = createGlobalStyle`
     --dark-color-1: rgba(0, 0, 0, 0.87);
     --dark-color-2: #cdcdcd;
     --primary-color: #1D7E7A;
+    --secondary-color: #EFFBFB;
     --primary-font: 'Source Sans Pro', sans-serif;
     --normal-weight: 400;
     --semi-bold-weight: 600;
     --bold-weight: 700;
     --light-weight: 300;
+    --high-index: 999;
+    --mid-index: 499;
+    --low-index: 99;
   }
 
   * {
@@ -83,8 +87,8 @@ const GlobalStyle = createGlobalStyle`
   }
   img {
     max-width: 100%;
-    margin: 1rem 0;
     height: auto;
+    display: block;
   }
 `;
 
