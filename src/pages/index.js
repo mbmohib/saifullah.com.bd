@@ -13,21 +13,25 @@ import {
 import { RightArrow } from "../icons";
 import styled from "styled-components";
 import heroImage from "../images/hero-image.jpg";
-import profileImage from "../images/profile-pic.jpg";
+import profileImage from "../images/profile-pic.png";
 
 const Hero = styled.div`
   background: url(${heroImage});
-  height: 80vh;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 `;
 
 const HeroContent = styled.div`
-  height: 80vh;
+  height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  p:first-child {
+    margin-top: 100px;
+  }
 `;
 
 const AboutContent = styled.div`
@@ -50,6 +54,9 @@ const AboutFooter = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 4rem;
+  background: #effbfb;
+  box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
+  border-radius: 10px;
 `;
 
 export default function IndexPage() {
@@ -59,13 +66,14 @@ export default function IndexPage() {
         <Container>
           <HeroContent>
             <Text color="light" variant="heading3">
-              Lorem ipsum
+              Assalamu ‘Alaikum,
             </Text>
             <Text color="light" variant="heading4">
               I’m
             </Text>
             <Text color="light" variant="heading1" as="h1">
-              Lorem ipsum dolor sit amet
+              Abdul Hi Muhammad <br />
+              Saifullah
             </Text>
           </HeroContent>
         </Container>
@@ -77,9 +85,9 @@ export default function IndexPage() {
           </Text>
           <Box ml={4} pl={4} borderLeft="4px solid var(--primary-color)">
             <Text variant="heading3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit
+              Religious Consultant at E.B solutions Limited & <br />
+              Khatib at Masjidul Jumawa Complex
             </Text>
-            <Text variant="heading3">Lorem ipsum dolor sit amet</Text>
           </Box>
         </Flex>
 
@@ -106,20 +114,18 @@ export default function IndexPage() {
           <AboutFooter>
             <Box gridArea="1 / 2" alignSelf="center">
               <Flex>
-                <Button>Click Me</Button>
-                <Button ml={3}>Click Me</Button>
+                <Button>Follow me</Button>
+                <Button ml={3}>Subscribe</Button>
               </Flex>
               <Link to="" mt={4}>
-                Lorem ipsum dolor
+                <Text variant="heading4">ahsaifullah@gmail.com</Text>
               </Link>
               <Link to="" mt={2}>
-                Lorem ipsum dolor
+                <Text variant="heading4">01712-959706</Text>
               </Link>
             </Box>
           </AboutFooter>
         </AboutContent>
-
-        <Box height="100px" width="100%" backgroundColor="red"></Box>
       </Container>
     </Layout>
   );
