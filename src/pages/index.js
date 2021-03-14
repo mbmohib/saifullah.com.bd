@@ -22,7 +22,9 @@ import {
   Video
 } from "../icons";
 import styled from "styled-components";
+import { mediaQuery } from "../styles";
 import heroImage from "../images/hero-image.jpg";
+import heroImageMobile from "../images/hero-image-mobile.jpg";
 import profileImage from "../images/profile-pic.png";
 import bookImage from "../images/book.jpg";
 import videoImage01 from "../images/video-01.jpg";
@@ -110,11 +112,15 @@ const blogs = [
 ];
 
 const Hero = styled.div`
-  background: url(${heroImage});
+  background: url(${heroImageMobile});
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+
+  ${mediaQuery.sm`
+    background: url(${heroImage});
+  `}
 `;
 
 const HeroContent = styled.div`
@@ -183,7 +189,7 @@ export default function IndexPage() {
         </Container>
       </Hero>
       <Container py={6}>
-        <Flex>
+        <Flex flexDirection={{ xs: "column", md: "row" }}>
           <Text mr={3} color="primary" variant="heading2">
             About me
           </Text>
@@ -225,7 +231,7 @@ export default function IndexPage() {
                   <Facebook mr={2} />
                   Follow me
                 </Button>
-                <Button ml={3}>
+                <Button ml={5}>
                   <Youtube mr={2} />
                   Subscribe
                 </Button>

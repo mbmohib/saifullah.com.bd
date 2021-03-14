@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { breakpoints } from "./theme";
+import { breakpointsRule as breakpoints } from "./theme";
 
 const media = Object.keys(breakpoints).reduce((accumulator, label) => {
   const emSize = breakpoints[label] / 16;

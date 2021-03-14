@@ -3,14 +3,20 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { Button, Flex } from "../components";
 import { DownArrowSmall } from "../icons";
+import { mediaQuery } from "../styles";
 
 const Menu = styled.nav`
-  display: flex;
+  display: none;
+
+  ${mediaQuery.md`
+    display: flex;
+  `}
 `;
 
 const MenuItem = styled(Link)`
   padding: 16px 24px;
   color: var(--primary-color);
+  font-weight: var(--semi-bold-weight);
 `;
 
 export default function Nav() {

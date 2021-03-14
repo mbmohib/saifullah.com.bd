@@ -1,10 +1,19 @@
-export const breakpoints = {
-  xs: 0,
-  sm: 600,
-  md: 960,
+export const breakpointsRule = {
+  xs: 600,
+  sm: 768,
+  md: 1024,
   lg: 1280,
-  xl: 1920
+  xl: 1536
 };
+
+const breakpoints = ["600px", "768px", "1024px", "1280px", "1536px"];
+
+// aliases
+breakpoints.xs = breakpoints[0];
+breakpoints.sm = breakpoints[1];
+breakpoints.md = breakpoints[2];
+breakpoints.lg = breakpoints[3];
+breakpoints.xl = breakpoints[4];
 
 const theme = {
   name: "light",

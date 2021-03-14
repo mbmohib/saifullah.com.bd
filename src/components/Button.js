@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 import { grid, flexbox, space, layout, color } from "styled-system";
+import { mediaQuery } from "../styles";
 
 const Button = styled.button`
   outline: 0;
-  padding: 12px 28px;
   border: none;
   color: var(--primary-color);
   font-weight: var(--bold-weight);
@@ -12,12 +12,19 @@ const Button = styled.button`
   box-shadow: -10px -10px 20px #ffffff, 5px 5px 10px #afd1d1;
   border-radius: 8px;
   font-weight: var(--bold-weight);
-  font-size: 28px;
-  line-height: 45px;
   font-family: var(--primary-font);
   display: flex;
   align-items: center;
   transition: all 0.2s ease-in-out;
+  padding: 8px 16px;
+  font-size: 18px;
+  line-height: 1.5;
+
+  ${mediaQuery.md`
+    padding: 8px 24px;
+    font-size: 28px;
+    line-height: 45px;
+  `}
 
   :hover,
   :active {
@@ -29,7 +36,6 @@ const Button = styled.button`
   ${({ size }) =>
     size === "small" &&
     css`
-      padding: 8px 24px;
       box-shadow: -10px -10px 20px #ffffff, 2px 2px 4px #afd1d1;
     `}
 
