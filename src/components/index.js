@@ -13,3 +13,4 @@ export { default as Flex } from "./Flex";
 export { default as Grid } from "./Grid";
 export { default as Stat } from "./Stat";
 export { default as Blog } from "./Blog";
+export { default as DynamicImage } from "./DynamicImage";

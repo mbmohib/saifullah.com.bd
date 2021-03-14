@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Text, Image, Link, Box } from "../components";
+import { Text, DynamicImage, Link, Box } from "../components";
 import { RightArrow } from "../icons";
 
 const BlogWrapper = styled.div`
@@ -12,7 +12,11 @@ const BlogWrapper = styled.div`
 export default function Blog({ blog }) {
   return (
     <BlogWrapper>
-      <Image src={blog.image} />
+      <DynamicImage
+        style={{ justifySelf: "flex-end" }}
+        src={blog.image}
+        alt={blog.title}
+      />
       <Box py={4} px={4}>
         <Text variant="paragraph1" mb={3} underline color="primary">
           {blog.category}

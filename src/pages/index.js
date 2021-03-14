@@ -7,10 +7,10 @@ import {
   Container,
   Flex,
   Link,
-  Image,
   Stat,
   Grid,
-  Blog
+  Blog,
+  DynamicImage
 } from "../components";
 import {
   RightArrow,
@@ -25,15 +25,10 @@ import styled from "styled-components";
 import { mediaQuery } from "../styles";
 import heroImage from "../images/hero-image.jpg";
 import heroImageMobile from "../images/hero-image-mobile.jpg";
-import profileImage from "../images/profile-pic.png";
-import bookImage from "../images/book.jpg";
 import videoImage01 from "../images/video-01.jpg";
 import videoImage02 from "../images/video-02.jpg";
 import videoImage03 from "../images/video-03.jpg";
 import videoImage04 from "../images/video-04.jpg";
-import blogImage01 from "../images/blog-01.jpg";
-import blogImage02 from "../images/blog-02.jpg";
-import blogImage03 from "../images/blog-03.jpg";
 
 const stats = [
   {
@@ -85,7 +80,7 @@ const blogs = [
   {
     title: "lorem ipsum dolar sit amet",
     date: "February 28, 2021",
-    image: blogImage01,
+    image: "blog-01.jpg",
     url: "",
     category: "Siam",
     content:
@@ -94,7 +89,7 @@ const blogs = [
   {
     title: "lorem ipsum dolar sit amet",
     date: "February 28, 2021",
-    image: blogImage02,
+    image: "blog-02.jpg",
     url: "",
     category: "Siam",
     content:
@@ -103,7 +98,7 @@ const blogs = [
   {
     title: "lorem ipsum dolar sit amet",
     date: "February 28, 2021",
-    image: blogImage03,
+    image: "blog-03.jpg",
     url: "",
     category: "Siam",
     content:
@@ -139,7 +134,7 @@ const AboutContent = styled.div`
   column-gap: 4rem;
   margin-top: 40px;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1 2fr;
+  grid-template-rows: 2fr 1fr 2fr;
   grid-template-areas:
     "thumb"
     "content"
@@ -172,7 +167,6 @@ const AboutFooter = styled.div`
     grid-column: 1 / 3;
     grid-row: 3 / 5;
     display: grid;
-    grid-template-columns: 1fr;
     column-gap: 4rem;
   `}
 `;
@@ -220,7 +214,7 @@ export default function IndexPage() {
 
         <AboutContent>
           <Box zIndex="99" gridArea="thumb">
-            <Image src={profileImage} alt="Profile Image" />
+            <DynamicImage src="profile-pic.png" alt="Profile Image" />
           </Box>
           <Box gridArea="content" mt={[6, 1]}>
             <Text>
@@ -306,9 +300,9 @@ export default function IndexPage() {
               Read More <RightArrow ml={1} />
             </Link>
           </Box>
-          <Image
+          <DynamicImage
             style={{ justifySelf: "flex-end" }}
-            src={bookImage}
+            src="book.jpg"
             alt="Book Image"
           />
         </Grid>
