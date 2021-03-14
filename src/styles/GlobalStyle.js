@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
     --dark-color-2: #cdcdcd;
     --primary-color: #1D7E7A;
     --secondary-color: #EFFBFB;
+    --tertiary-color: #EAF1F1;
     --primary-font: 'Source Sans Pro', sans-serif;
     --normal-weight: 400;
     --semi-bold-weight: 600;

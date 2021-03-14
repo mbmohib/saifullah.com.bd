@@ -4,3 +4,5 @@ export { default as Facebook } from "./Facebook";
 export { default as Youtube } from "./Youtube";
 export { default as Phone } from "./Phone";
 export { default as Email } from "./Email";
+export { default as Video } from "./Video";
+export { default as Book } from "./Book";

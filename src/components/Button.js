@@ -33,6 +33,13 @@ const Button = styled.button`
       box-shadow: -10px -10px 20px #ffffff, 2px 2px 4px #afd1d1;
     `}
 
+  ${({ color }) =>
+    color === "secondary" &&
+    css`
+      background: #ffffff;
+      box-shadow: -5px -5px 10px #effbfb, 5px 5px 10px #b6dada;
+    `}
+
   ${layout} 
   ${space} 
   ${color} 

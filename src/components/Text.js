@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { space } from "styled-system";
 
 const Text = styled.p`
   ${({ variant }) =>
@@ -30,6 +31,13 @@ const Text = styled.p`
     `}
 
   ${({ variant }) =>
+    variant === "heading5" &&
+    css`
+      font-size: 24px;
+      font-weight: var(--semi-bold-weight);
+    `}
+
+  ${({ variant }) =>
     variant === "paragraph1" &&
     css`
       font-size: 18px;
@@ -39,7 +47,7 @@ const Text = styled.p`
   ${({ variant }) =>
     variant === "subtitle" &&
     css`
-      font-size: 18px;
+      font-size: 14px;
     `}
     
 
@@ -60,6 +68,15 @@ const Text = styled.p`
     css`
       color: var(--text-color-light);
     `}
+
+  ${({ underline }) =>
+    underline &&
+    css`
+      text-decoration: underline;
+      text-underline-position: under;
+    `}
+
+    ${space}
 `;
 
 Text.defaultProps = {

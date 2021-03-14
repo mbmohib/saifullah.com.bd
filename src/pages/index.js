@@ -8,12 +8,106 @@ import {
   Flex,
   Link,
   Image,
-  Grid
+  Stat,
+  Grid,
+  Blog
 } from "../components";
-import { RightArrow, Facebook, Email, Phone, Youtube } from "../icons";
+import {
+  RightArrow,
+  Facebook,
+  Email,
+  Phone,
+  Youtube,
+  Book,
+  Video
+} from "../icons";
 import styled from "styled-components";
 import heroImage from "../images/hero-image.jpg";
 import profileImage from "../images/profile-pic.png";
+import bookImage from "../images/book.jpg";
+import videoImage01 from "../images/video-01.jpg";
+import videoImage02 from "../images/video-02.jpg";
+import videoImage03 from "../images/video-03.jpg";
+import videoImage04 from "../images/video-04.jpg";
+import blogImage01 from "../images/blog-01.jpg";
+import blogImage02 from "../images/blog-02.jpg";
+import blogImage03 from "../images/blog-03.jpg";
+
+const stats = [
+  {
+    label: "Followers",
+    stat: "1.5M+",
+    icon: <Facebook width="30" height="63" mr={3} />
+  },
+  {
+    label: "Subscribers",
+    stat: "1.5M+",
+    icon: <Youtube width="86" height="50" mr={3} />
+  },
+  {
+    label: "Videos",
+    stat: "1.5M+",
+    icon: <Video width="86" height="50" mr={3} />
+  },
+  {
+    label: "Book",
+    stat: "1.5M+",
+    icon: <Book width="86" height="50" mr={3} />
+  }
+];
+
+const videos = [
+  {
+    title: "lorem ipsum dolar sit amet",
+    url: "",
+    image: videoImage01
+  },
+  {
+    title: "lorem ipsum dolar sit amet",
+    url: "",
+    image: videoImage02
+  },
+  {
+    title: "lorem ipsum dolar sit amet",
+    url: "",
+    image: videoImage03
+  },
+  {
+    title: "lorem ipsum dolar sit amet",
+    url: "",
+    image: videoImage04
+  }
+];
+
+const blogs = [
+  {
+    title: "lorem ipsum dolar sit amet",
+    date: "February 28, 2021",
+    image: blogImage01,
+    url: "",
+    category: "Siam",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit donec dignissim interdum et elementum pellentesque egestas enim gravida. Sit lobortis arcu, vitae libero. Blandit accumsan sed eros"
+  },
+  {
+    title: "lorem ipsum dolar sit amet",
+    date: "February 28, 2021",
+    image: blogImage02,
+    url: "",
+    category: "Siam",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit donec dignissim interdum et elementum pellentesque egestas enim gravida. Sit lobortis arcu, vitae libero. Blandit accumsan sed eros"
+  },
+  {
+    title: "lorem ipsum dolar sit amet",
+    date: "February 28, 2021",
+    image: blogImage03,
+    url: "",
+    category: "Siam",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit donec dignissim interdum et elementum pellentesque egestas enim gravida. Sit lobortis arcu, vitae libero. Blandit accumsan sed eros"
+  }
+];
 
 const Hero = styled.div`
   background: url(${heroImage});
@@ -60,6 +154,15 @@ const AboutFooter = styled.div`
   padding: 16px 0;
 `;
 
+const VideoItem = styled.a`
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${({ image }) => image});
+  background-size: cover;
+  background-position: center center;
+  padding: 6rem 0;
+  text-align: center;
+`;
+
 export default function IndexPage() {
   return (
     <Layout title="Home">
@@ -93,6 +196,9 @@ export default function IndexPage() {
         </Flex>
 
         <AboutContent>
+          <Box zIndex="99" gridArea="thumb">
+            <Image src={profileImage} alt="Profile Image" />
+          </Box>
           <Box zIndex="99" gridArea="thumb">
             <Image src={profileImage} alt="Profile Image" />
           </Box>
@@ -135,6 +241,81 @@ export default function IndexPage() {
             </Box>
           </AboutFooter>
         </AboutContent>
+      </Container>
+
+      <Container fluid>
+        <Grid gridGap={4} gridTemplateColumns="repeat(4, 1fr)">
+          {stats.map((stat, i) => (
+            <Stat stat={stat} key={i} />
+          ))}
+        </Grid>
+      </Container>
+      <Container mt={6}>
+        <Grid gridGap={4} gridTemplateColumns="1fr 1fr">
+          <Box>
+            <Text mb={4} variant="heading2" color="primary" underline>
+              Book Name
+            </Text>
+
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit donec
+              dignissim interdum et elementum pellentesque egestas enim gravida.
+              Sit lobortis arcu, vitae libero. Blandit accumsan, sed eros,
+              volutpat. Diam, arcu quam tellus at massa eget. Faucibus praesent
+              suscipit mattis augue. Non id lacus at nunc. Posuere Diam, arcu
+              quam tellus at massa eget. Faucibus praesent suscipit mattis
+              augue. Non id lacus at nunc. Posuere
+            </Text>
+
+            <Link mt={2} to="">
+              Read More <RightArrow ml={1} />
+            </Link>
+          </Box>
+          <Image
+            style={{ justifySelf: "flex-end" }}
+            src={bookImage}
+            alt="Book Image"
+          />
+        </Grid>
+      </Container>
+
+      <Container mt={6}>
+        <Flex justifyContent="space-between" mb={5}>
+          <Text variant="heading2" color="primary" underline>
+            Featured Videos
+          </Text>
+          <Button color="secondary">View All</Button>
+        </Flex>
+        <Grid gridGap={4} gridTemplateColumns="repeat(2, 1fr)">
+          {videos.map((video, i) => (
+            <VideoItem image={video.image} href={video.url} key={i}>
+              <Text variant="heading3" color="light">
+                {video.title}
+              </Text>
+            </VideoItem>
+          ))}
+        </Grid>
+      </Container>
+
+      <Container mt={6}>
+        <Grid gridTemplateColumns="1fr 3fr">
+          <Text mr={3} color="primary" variant="heading2">
+            Blog posts
+          </Text>
+          <Box ml={4} pl={4} borderLeft="4px solid var(--primary-color)">
+            <Text variant="paragraph1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum
+              nunc etiam amet nunc morbi potenti mauris. Neque scelerisque
+              aliquet ac sodales mi suspendisse. Urna euismod pellentesque .
+            </Text>
+          </Box>
+        </Grid>
+
+        <Grid mt={5} gridGap={4} gridTemplateColumns="repeat(3, 1fr)">
+          {blogs.map((blog, i) => (
+            <Blog key={i} blog={blog} />
+          ))}
+        </Grid>
       </Container>
     </Layout>
   );
