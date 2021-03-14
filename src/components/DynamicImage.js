@@ -31,7 +31,7 @@ export default function GatsbyImageExtended({ src, ...rest }) {
             extension
             publicURL
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }

@@ -23,12 +23,10 @@ import {
 } from "../icons";
 import styled from "styled-components";
 import { mediaQuery } from "../styles";
-import heroImage from "../images/hero-image.jpg";
-import heroImageMobile from "../images/hero-image-mobile.jpg";
-import videoImage01 from "../images/video-01.jpg";
-import videoImage02 from "../images/video-02.jpg";
-import videoImage03 from "../images/video-03.jpg";
-import videoImage04 from "../images/video-04.jpg";
+import heroImage from "../images/background/hero-image.jpg";
+import heroImageMobile from "../images/background/hero-image-mobile.jpg";
+import BackgroundImage from "gatsby-background-image";
+import { useBackgroundImage } from "../hooks";
 
 const stats = [
   {
@@ -57,22 +55,22 @@ const videos = [
   {
     title: "lorem ipsum dolar sit amet",
     url: "",
-    image: videoImage01
+    image: "video-01.jpg"
   },
   {
     title: "lorem ipsum dolar sit amet",
     url: "",
-    image: videoImage02
+    image: "video-02.jpg"
   },
   {
     title: "lorem ipsum dolar sit amet",
     url: "",
-    image: videoImage03
+    image: "video-03.jpg"
   },
   {
     title: "lorem ipsum dolar sit amet",
     url: "",
-    image: videoImage04
+    image: "video-04.jpg"
   }
 ];
 
@@ -171,7 +169,7 @@ const AboutFooter = styled.div`
   `}
 `;
 
-const VideoItem = styled.a`
+const VideoItem = styled(BackgroundImage)`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${({ image }) => image});
   background-size: cover;
@@ -181,8 +179,16 @@ const VideoItem = styled.a`
 `;
 
 export default function IndexPage() {
+  const videoImages = useBackgroundImage([
+    "video-01.jpg",
+    "video-02.jpg",
+    "video-03.jpg",
+    "video-04.jpg"
+  ]);
+
   return (
     <Layout title="Home">
+      <BackgroundImage />
       <Hero>
         <Container>
           <HeroContent>
@@ -317,11 +323,13 @@ export default function IndexPage() {
         </Flex>
         <Grid gridGap={4} gridTemplateColumns={["1fr", "repeat(2, 1fr)"]}>
           {videos.map((video, i) => (
-            <VideoItem image={video.image} href={video.url} key={i}>
-              <Text variant="heading3" color="light">
-                {video.title}
-              </Text>
-            </VideoItem>
+            <a href={video.url} key={i}>
+              <VideoItem fluid={videoImages[i].node.childImageSharp.fluid}>
+                <Text variant="heading3" color="light">
+                  {video.title}
+                </Text>
+              </VideoItem>
+            </a>
           ))}
         </Grid>
       </Container>
