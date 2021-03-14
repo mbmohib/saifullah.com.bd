@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { Button, Flex } from "../components";
+import { DownArrowSmall } from "../icons";
 
 const Menu = styled.nav`
   display: flex;
@@ -20,7 +21,9 @@ export default function Nav() {
         <MenuItem to="/">Contact Us</MenuItem>
       </Menu>
 
-      <Button>EN</Button>
+      <Button size="small">
+        EN <DownArrowSmall ml={2} />
+      </Button>
     </Flex>
   );
 }

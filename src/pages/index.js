@@ -10,7 +10,7 @@ import {
   Image,
   Grid
 } from "../components";
-import { RightArrow } from "../icons";
+import { RightArrow, Facebook, Email, Phone, Youtube } from "../icons";
 import styled from "styled-components";
 import heroImage from "../images/hero-image.jpg";
 import profileImage from "../images/profile-pic.png";
@@ -57,6 +57,7 @@ const AboutFooter = styled.div`
   background: #effbfb;
   box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
   border-radius: 10px;
+  padding: 16px 0;
 `;
 
 export default function IndexPage() {
@@ -107,20 +108,28 @@ export default function IndexPage() {
               veritatis fugit ipsum.
             </Text>
 
-            <Link mt={1} to="">
+            <Link mt={2} to="">
               Read More <RightArrow ml={1} />
             </Link>
           </Box>
           <AboutFooter>
             <Box gridArea="1 / 2" alignSelf="center">
               <Flex>
-                <Button>Follow me</Button>
-                <Button ml={3}>Subscribe</Button>
+                <Button>
+                  <Facebook mr={2} />
+                  Follow me
+                </Button>
+                <Button ml={3}>
+                  <Youtube mr={2} />
+                  Subscribe
+                </Button>
               </Flex>
               <Link to="" mt={4}>
+                <Email mr={2} mt={1} />
                 <Text variant="heading4">ahsaifullah@gmail.com</Text>
               </Link>
               <Link to="" mt={2}>
+                <Phone mr={2} mt={1} />
                 <Text variant="heading4">01712-959706</Text>
               </Link>
             </Box>

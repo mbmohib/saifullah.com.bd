@@ -33,7 +33,7 @@ const Text = styled.p`
     variant === "paragraph1" &&
     css`
       font-size: 18px;
-      font-weight: var(--semi-bold-weight);
+      font-weight: var(--normal-weight);
     `}
 
   ${({ variant }) =>

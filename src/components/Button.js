@@ -14,17 +14,29 @@ const Button = styled.button`
   font-weight: var(--bold-weight);
   font-size: 28px;
   line-height: 45px;
+  font-family: var(--primary-font);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  :hover,
+  :active {
+    box-shadow: -10px -10px 20px #ffffff, 5px 5px 10px #afd1d1,
+      inset 5px 5px 10px rgba(175, 209, 209, 0.4),
+      inset -10px -10px 20px #ffffff;
+  }
 
   ${({ size }) =>
     size === "small" &&
     css`
+      padding: 8px 24px;
       box-shadow: -10px -10px 20px #ffffff, 2px 2px 4px #afd1d1;
     `}
 
-  ${layout}
-  ${space}
-  ${color}
-  ${grid}
+  ${layout} 
+  ${space} 
+  ${color} 
+  ${grid} 
   ${flexbox}
 `;
 

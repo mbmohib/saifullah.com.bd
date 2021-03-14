@@ -54,7 +54,7 @@ const theme = {
       fontWeight: 400
     }
   },
-  space: [0, 8, 16, 24, 32, 40, 48, 56],
+  space: [8, 16, 24, 32, 40, 48, 56],
   breakpoints,
   colors: {
     primary3: "#7950F2",
