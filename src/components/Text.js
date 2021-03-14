@@ -7,11 +7,7 @@ const Text = styled.p`
     variant === "heading1" &&
     css`
       font-weight: var(--semi-bold-weight);
-      font-size: 36px;
-
-      ${mediaQuery.lg`
-        font-size: 48px;
-      `}
+      font-size: 48px;
 
       ${mediaQuery.xl`
         font-size: 56px;

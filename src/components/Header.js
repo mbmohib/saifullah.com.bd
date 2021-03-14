@@ -13,18 +13,9 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Container>
-        <Flex
-          height={{ xs: "60px", md: "100px" }}
-          justifyContent="space-between"
-          alignItems="center"
-        >
+        <Flex height="100px" justifyContent="space-between" alignItems="center">
           <Link to="/">
-            <Box display={{ _: "none", md: "block" }} p={{ xs: 3, md: 6 }}>
-              <Logo width="47" height="71" />
-            </Box>
-            <Box display={{ xs: "block", md: "none" }}>
-              <Logo width="27" height="51" />
-            </Box>
+            <Logo width="47" height="71" />
           </Link>
           <Nav />
         </Flex>

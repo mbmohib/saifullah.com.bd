@@ -136,28 +136,45 @@ const HeroContent = styled.div`
 
 const AboutContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
   column-gap: 4rem;
   margin-top: 40px;
-  grid-template-rows: 2fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1 2fr;
   grid-template-areas:
-    "thumb content"
-    "thumb content"
-    "thumb content"
-    "footer footer";
+    "thumb"
+    "content"
+    "footer";
+
+  ${mediaQuery.md`
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+      "thumb content"
+      "thumb content"
+      "thumb content"
+      "footer footer";
+  `}
 `;
 
 const AboutFooter = styled.div`
   background: var(--secondary-color);
-  grid-column: 1 / 3;
-  grid-row: 3 / 5;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 4rem;
   background: #effbfb;
-  box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
   border-radius: 10px;
   padding: 16px 0;
+  box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  ${mediaQuery.md`
+    margin-top: 0;
+    grid-template-columns: 1fr 2fr;
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 4rem;
+  `}
 `;
 
 const VideoItem = styled.a`
@@ -189,26 +206,23 @@ export default function IndexPage() {
         </Container>
       </Hero>
       <Container mt={10}>
-        <Flex flexDirection={{ xs: "column", md: "row" }}>
-          <Text mr={3} color="primary" variant="heading2">
+        <Grid gridTemplateColumns={["1fr", "1fr 3fr"]}>
+          <Text color="primary" variant="heading2">
             About me
           </Text>
-          <Box ml={4} pl={4} borderLeft="4px solid var(--primary-color)">
+          <Box pl={4} borderLeft="4px solid var(--primary-color)">
             <Text variant="heading3">
               Religious Consultant at E.B solutions Limited & <br />
               Khatib at Masjidul Jumawa Complex
             </Text>
           </Box>
-        </Flex>
+        </Grid>
 
         <AboutContent>
           <Box zIndex="99" gridArea="thumb">
             <Image src={profileImage} alt="Profile Image" />
           </Box>
-          <Box zIndex="99" gridArea="thumb">
-            <Image src={profileImage} alt="Profile Image" />
-          </Box>
-          <Box gridArea="content">
+          <Box gridArea="content" mt={[6, 1]}>
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aspernatur dicta vel laudantium. Quas nam quis magnam? Distinctio
@@ -255,15 +269,24 @@ export default function IndexPage() {
         mt={10}
       >
         <Container fluid>
-          <Grid gridGap={4} gridTemplateColumns="repeat(4, 1fr)">
+          <Grid
+            gridGap={4}
+            gridTemplateColumns={[
+              "1fr",
+              "repeat(2, 1fr)",
+              null,
+              "repeat(4, 1fr)"
+            ]}
+          >
             {stats.map((stat, i) => (
               <Stat stat={stat} key={i} />
             ))}
           </Grid>
         </Container>
       </Box>
+
       <Container mt={10}>
-        <Grid gridGap={4} gridTemplateColumns="1fr 1fr">
+        <Grid gridGap={4} gridTemplateColumns={["1fr", "1fr 1fr"]}>
           <Box>
             <Text mb={4} variant="heading2" color="primary" underline>
               Book Name
@@ -298,7 +321,7 @@ export default function IndexPage() {
           </Text>
           <Button color="secondary">View All</Button>
         </Flex>
-        <Grid gridGap={4} gridTemplateColumns="repeat(2, 1fr)">
+        <Grid gridGap={4} gridTemplateColumns={["1fr", "repeat(2, 1fr)"]}>
           {videos.map((video, i) => (
             <VideoItem image={video.image} href={video.url} key={i}>
               <Text variant="heading3" color="light">
@@ -310,11 +333,11 @@ export default function IndexPage() {
       </Container>
 
       <Container mt={10}>
-        <Grid gridTemplateColumns="1fr 3fr">
-          <Text mr={3} color="primary" variant="heading2">
+        <Grid gridTemplateColumns={["1fr", "1fr 3fr"]}>
+          <Text color="primary" variant="heading2">
             Blog posts
           </Text>
-          <Box ml={4} pl={4} borderLeft="4px solid var(--primary-color)">
+          <Box pl={4} borderLeft="4px solid var(--primary-color)">
             <Text variant="paragraph1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum
               nunc etiam amet nunc morbi potenti mauris. Neque scelerisque
@@ -323,7 +346,11 @@ export default function IndexPage() {
           </Box>
         </Grid>
 
-        <Grid mt={5} gridGap={4} gridTemplateColumns="repeat(3, 1fr)">
+        <Grid
+          mt={5}
+          gridGap={[6, 4]}
+          gridTemplateColumns={["1fr", "repeat(3, 1fr)"]}
+        >
           {blogs.map((blog, i) => (
             <Blog key={i} blog={blog} />
           ))}

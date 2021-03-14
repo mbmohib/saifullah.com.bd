@@ -12,7 +12,11 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <Flex justifyContent="space-between">
+        <Flex
+          textAlign={["center", "left"]}
+          justifyContent="space-between"
+          flexDirection={["column", "row"]}
+        >
           <Text color="primary" variant="subtitle">
             © {new Date().getFullYear()} saifullah.com.bd
           </Text>
