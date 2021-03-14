@@ -188,7 +188,7 @@ export default function IndexPage() {
           </HeroContent>
         </Container>
       </Hero>
-      <Container py={6}>
+      <Container mt={10}>
         <Flex flexDirection={{ xs: "column", md: "row" }}>
           <Text mr={3} color="primary" variant="heading2">
             About me
@@ -249,14 +249,20 @@ export default function IndexPage() {
         </AboutContent>
       </Container>
 
-      <Container fluid>
-        <Grid gridGap={4} gridTemplateColumns="repeat(4, 1fr)">
-          {stats.map((stat, i) => (
-            <Stat stat={stat} key={i} />
-          ))}
-        </Grid>
-      </Container>
-      <Container mt={6}>
+      <Box
+        backgroundColor="var(--secondary-color)"
+        py={{ md: "80px", lg: "100px", xl: "150px" }}
+        mt={10}
+      >
+        <Container fluid>
+          <Grid gridGap={4} gridTemplateColumns="repeat(4, 1fr)">
+            {stats.map((stat, i) => (
+              <Stat stat={stat} key={i} />
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+      <Container mt={10}>
         <Grid gridGap={4} gridTemplateColumns="1fr 1fr">
           <Box>
             <Text mb={4} variant="heading2" color="primary" underline>
@@ -285,7 +291,7 @@ export default function IndexPage() {
         </Grid>
       </Container>
 
-      <Container mt={6}>
+      <Container mt={10}>
         <Flex justifyContent="space-between" mb={5}>
           <Text variant="heading2" color="primary" underline>
             Featured Videos
@@ -303,7 +309,7 @@ export default function IndexPage() {
         </Grid>
       </Container>
 
-      <Container mt={6}>
+      <Container mt={10}>
         <Grid gridTemplateColumns="1fr 3fr">
           <Text mr={3} color="primary" variant="heading2">
             Blog posts

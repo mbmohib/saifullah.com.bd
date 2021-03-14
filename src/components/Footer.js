@@ -5,7 +5,7 @@ import { Text, Container, Flex } from "../components";
 const FooterWrapper = styled.footer`
   background: var(--tertiary-color);
   padding: 8px 0;
-  margin-top: 52px;
+  margin-top: 100px;
 `;
 
 export default function Footer() {

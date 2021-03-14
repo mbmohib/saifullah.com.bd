@@ -19,7 +19,7 @@ export default function Stat({ stat = {} }) {
           <Text variant="heading1" color="primary">
             {stat.stat}
           </Text>
-          <Text>{stat.label}</Text>
+          <Text variant="heading4">{stat.label}</Text>
         </Box>
       </Flex>
     </StatWrapper>

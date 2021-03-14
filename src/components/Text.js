@@ -1,12 +1,21 @@
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
+import { mediaQuery } from "../styles";
 
 const Text = styled.p`
   ${({ variant }) =>
     variant === "heading1" &&
     css`
-      font-size: 56px;
       font-weight: var(--semi-bold-weight);
+      font-size: 36px;
+
+      ${mediaQuery.lg`
+        font-size: 48px;
+      `}
+
+      ${mediaQuery.xl`
+        font-size: 56px;
+      `}
     `}
 
   ${({ variant }) =>
