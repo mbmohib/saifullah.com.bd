@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 export default function GatsbyImageExtended(src = []) {

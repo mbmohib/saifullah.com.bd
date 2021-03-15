@@ -17,22 +17,34 @@ const Text = styled.p`
   ${({ variant }) =>
     variant === "heading2" &&
     css`
-      font-size: 48px;
+      font-size: 36px;
       font-weight: var(--bold-weight);
+
+      ${mediaQuery.md`
+        font-size: 48px;
+      `}
     `}
 
   ${({ variant }) =>
     variant === "heading3" &&
     css`
-      font-size: 36px;
+      font-size: 28px;
       font-weight: var(--semi-bold-weight);
+
+      ${mediaQuery.md`
+        font-size: 36px;
+      `}
     `}
 
   ${({ variant }) =>
     variant === "heading4" &&
     css`
-      font-size: 28px;
+      font-size: 24px;
       font-weight: var(--semi-bold-weight);
+
+      ${mediaQuery.md`
+        font-size: 28px;
+      `}
     `}
 
   ${({ variant }) =>

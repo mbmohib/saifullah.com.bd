@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grid, size, space, layout, typography } from "styled-system";
+import { grid, size, space, layout, typography, flexbox } from "styled-system";
 
 const Grid = styled.div`
   display: grid;
@@ -9,6 +9,7 @@ const Grid = styled.div`
   ${size}
   ${space}
   ${layout}
+  ${flexbox}
 `;
 
 export default Grid;

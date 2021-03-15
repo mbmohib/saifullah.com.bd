@@ -105,19 +105,18 @@ const blogs = [
 ];
 
 const Hero = styled.div`
-  background: url(${heroImageMobile});
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 80vh;
+  background: no-repeat top center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url(${heroImageMobile});
 
   ${mediaQuery.sm`
-    background: url(${heroImage});
+    background: url(${heroImage}) no-repeat top center;
   `}
 `;
 
 const HeroContent = styled.div`
-  height: calc(100vh - 100px);
+  height: calc(90vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,7 +131,7 @@ const AboutContent = styled.div`
   column-gap: 4rem;
   margin-top: 40px;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
     "thumb"
     "content"
@@ -187,7 +186,7 @@ export default function IndexPage() {
   ]);
 
   return (
-    <Layout title="Home">
+    <Layout title="Abdul Hi Muhammad Saifullah">
       <BackgroundImage />
       <Hero>
         <Container>
@@ -205,7 +204,7 @@ export default function IndexPage() {
           </HeroContent>
         </Container>
       </Hero>
-      <Container mt={10}>
+      <Container mt={[8, 10]}>
         <Grid gridTemplateColumns={["1fr", "1fr 3fr"]}>
           <Text color="primary" variant="heading2">
             About me
@@ -245,7 +244,7 @@ export default function IndexPage() {
                   <Facebook mr={2} />
                   Follow me
                 </Button>
-                <Button ml={5}>
+                <Button ml={[3, 5]}>
                   <Youtube mr={2} />
                   Subscribe
                 </Button>
@@ -265,7 +264,7 @@ export default function IndexPage() {
 
       <Box
         backgroundColor="var(--secondary-color)"
-        py={{ md: "80px", lg: "100px", xl: "150px" }}
+        py={{ _: "80px", lg: "100px", xl: "150px" }}
         mt={10}
       >
         <Container fluid>
@@ -287,7 +286,7 @@ export default function IndexPage() {
 
       <Container mt={10}>
         <Grid gridGap={4} gridTemplateColumns={["1fr", "1fr 1fr"]}>
-          <Box>
+          <Box order={[2, 1]}>
             <Text mb={4} variant="heading2" color="primary" underline>
               Book Name
             </Text>
@@ -306,18 +305,16 @@ export default function IndexPage() {
               Read More <RightArrow ml={1} />
             </Link>
           </Box>
-          <DynamicImage
-            style={{ justifySelf: "flex-end" }}
-            src="book.jpg"
-            alt="Book Image"
-          />
+          <Box order={[1, 2]} justifySelf="flex-end">
+            <DynamicImage src="book.jpg" alt="Book Image" />
+          </Box>
         </Grid>
       </Container>
 
       <Container mt={10}>
         <Flex justifyContent="space-between" mb={5}>
           <Text variant="heading2" color="primary" underline>
-            Featured Videos
+            Videos
           </Text>
           <Button color="secondary">View All</Button>
         </Flex>

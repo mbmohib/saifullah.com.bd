@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import styled, { css } from "styled-components";
 import { space, layout } from "styled-system";
 import { Image } from "./";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Img = styled(GatsbyImage)`
   max-width: 100%;
