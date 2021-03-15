@@ -106,12 +106,12 @@ const blogs = [
 
 const Hero = styled.div`
   height: 80vh;
-  background: no-repeat top center;
+  background: top center / cover no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url(${heroImageMobile});
 
   ${mediaQuery.sm`
-    background: url(${heroImage}) no-repeat top center;
+    background-image: url(${heroImage});
   `}
 `;
 
@@ -169,8 +169,6 @@ const AboutFooter = styled.div`
 `;
 
 const VideoItem = styled(BackgroundImage)`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${({ image }) => image});
   background-size: cover;
   background-position: center center;
   padding: 6rem 0;

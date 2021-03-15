@@ -8,6 +8,7 @@ const HeaderWrapper = styled.div`
   background: linear-gradient(360deg, #effbfb 0%, #ffffff 100%);
   position: absolute;
   width: 100%;
+  opacity: 0.9;
 `;
 
 const LogoItem = styled(Logo)`

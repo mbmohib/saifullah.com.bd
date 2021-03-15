@@ -9,7 +9,7 @@ const Text = styled.p`
       font-weight: var(--semi-bold-weight);
       font-size: 48px;
 
-      ${mediaQuery.xl`
+      ${mediaQuery.md`
         font-size: 56px;
       `}
     `}
