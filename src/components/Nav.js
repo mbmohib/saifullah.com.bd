@@ -17,6 +17,7 @@ const MenuItem = styled(Link)`
   padding: 16px 24px;
   color: var(--primary-color);
   font-weight: var(--semi-bold-weight);
+  font-size: 20px;
 `;
 
 export default function Nav() {

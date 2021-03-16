@@ -13,5 +13,5 @@ function Phone() {
 export default withSVG(Phone, {
   viewBox: "0 0 26 33",
   width: "26",
-  height: "33"
+  height: "26"
 });

@@ -12,6 +12,6 @@ function Email() {
 
 export default withSVG(Email, {
   viewBox: "0 0 34 24",
-  width: "34",
+  width: "24",
   height: "24"
 });
