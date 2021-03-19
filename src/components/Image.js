@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { size, space } from "styled-system";
+import { size, space, grid } from "styled-system";
 
 const Image = styled.img`
   max-width: 100%;
 
+  ${grid}
   ${size}
   ${space}
 `;

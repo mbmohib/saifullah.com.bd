@@ -26,7 +26,7 @@ function withSVG(WrappedComponent, config = {}) {
       const customFill = fill || config.fill;
       const customStroke = stroke || config.stroke;
       const customWidth = `${width || config.width}px`;
-      const customHeight = `${height || config.height}`;
+      const customHeight = `${height || config.height}px`;
       const customClassName = className || config.className || "";
       const customViewBox = viewBox || config.viewBox;
 

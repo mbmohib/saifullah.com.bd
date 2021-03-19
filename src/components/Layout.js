@@ -2,7 +2,6 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { Header, Footer, SEO } from "./";
-import { GlobalStyle } from "../styles";
 
 const LayoutWrapper = styled.div`
   background: var(--bg-color);
