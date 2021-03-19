@@ -100,7 +100,7 @@ export default function IndexPage() {
   return (
     <Layout title="Abdul Hi Muhammad Saifullah">
       <BackgroundImage />
-      <div class="hero">
+      <div className="hero">
         <Container>
           <div className="hero__content">
             <p className="text-xl text-white">Assalamu ‘Alaikum,</p>

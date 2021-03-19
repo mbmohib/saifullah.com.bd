@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default function GatsbyImageExtended({ src, ...rest }) {
+export default function GatsbyImageExtended({ src, alt = 'Image', ...rest }) {
   const data = useStaticQuery(graphql`
     query {
       images: allFile(
@@ -35,5 +35,7 @@ export default function GatsbyImageExtended({ src, ...rest }) {
     return <img src={publicURL} {...rest} />;
   }
 
-  return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} />;
+  return (
+    <GatsbyImage image={childImageSharp.gatsbyImageData} alt={alt} {...rest} />
+  );
 }
