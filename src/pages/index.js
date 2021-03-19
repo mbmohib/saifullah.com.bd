@@ -36,17 +36,17 @@ const stats = [
   },
   {
     label: "Subscribers",
-    stat: "1.5M+",
+    stat: "81K+",
     icon: <Youtube width="86" height="50" mr={3} />
   },
   {
     label: "Videos",
-    stat: "1.5M+",
+    stat: "700+",
     icon: <Video width="86" height="50" mr={3} />
   },
   {
     label: "Book",
-    stat: "1.5M+",
+    stat: "One",
     icon: <Book width="86" height="50" mr={3} />
   }
 ];
@@ -204,12 +204,14 @@ export default function IndexPage() {
       </Hero>
       <Container mt={[8, 10]}>
         <Grid gridTemplateColumns={["1fr", "1fr 3fr"]}>
-          <Text color="primary" variant="heading2">
+          <Text color="primary" variant="heading2" mb={[3, 0]}>
             About me
           </Text>
           <Box pl={4} borderLeft="4px solid var(--primary-color)">
             <Text variant="heading3">
-              Religious Consultant at E.B solutions Limited & <br />
+              Religious Consultant at E.B solutions Limited
+            </Text>
+            <Text variant="heading3" mt={2}>
               Khatib at Masjidul Jumawa Complex
             </Text>
           </Box>
@@ -248,7 +250,7 @@ export default function IndexPage() {
                 </Button>
               </Flex>
               <Link to="" mt={4}>
-                <Email mr={2} mt={1} />
+                <Email mr={2} mt="6px" />
                 <Text variant="heading4">ahsaifullah@gmail.com</Text>
               </Link>
               <Link to="" mt={2}>
@@ -265,7 +267,7 @@ export default function IndexPage() {
         py={{ _: "80px", lg: "100px", xl: "150px" }}
         mt={10}
       >
-        <Container fluid>
+        <Box px={{ _: 2, lg: 4, xl: 6 }}>
           <Grid
             gridGap={4}
             gridTemplateColumns={[
@@ -274,12 +276,13 @@ export default function IndexPage() {
               null,
               "repeat(4, 1fr)"
             ]}
+            justifyItems="center"
           >
             {stats.map((stat, i) => (
               <Stat stat={stat} key={i} />
             ))}
           </Grid>
-        </Container>
+        </Box>
       </Box>
 
       <Container mt={10}>
@@ -312,7 +315,7 @@ export default function IndexPage() {
       <Container mt={10}>
         <Flex justifyContent="space-between" mb={5}>
           <Text variant="heading2" color="primary" underline>
-            Videos
+            Featured Videos
           </Text>
           <Button color="secondary">View All</Button>
         </Flex>
@@ -331,7 +334,7 @@ export default function IndexPage() {
 
       <Container mt={10}>
         <Grid gridTemplateColumns={["1fr", "1fr 3fr"]}>
-          <Text color="primary" variant="heading2">
+          <Text color="primary" variant="heading2" mb={[3, 0]}>
             Blog posts
           </Text>
           <Box pl={4} borderLeft="4px solid var(--primary-color)">

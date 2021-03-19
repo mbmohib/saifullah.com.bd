@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { space } from "styled-system";
+import { space, typography } from "styled-system";
 import { mediaQuery } from "../styles";
 
 const Text = styled.p`
@@ -7,7 +7,7 @@ const Text = styled.p`
     variant === "heading1" &&
     css`
       font-weight: var(--semi-bold-weight);
-      font-size: 48px;
+      font-size: 36px;
 
       ${mediaQuery.md`
         font-size: 56px;
@@ -17,22 +17,23 @@ const Text = styled.p`
   ${({ variant }) =>
     variant === "heading2" &&
     css`
-      font-size: 36px;
+      font-size: 28px;
       font-weight: var(--bold-weight);
 
       ${mediaQuery.md`
-        font-size: 48px;
+        font-size: 36px;
       `}
     `}
 
   ${({ variant }) =>
     variant === "heading3" &&
     css`
-      font-size: 28px;
+      font-size: 24px;
       font-weight: var(--semi-bold-weight);
+      line-height: 1.3;
 
       ${mediaQuery.md`
-        font-size: 36px;
+        font-size: 28px;
       `}
     `}
 
@@ -43,7 +44,7 @@ const Text = styled.p`
       font-weight: var(--semi-bold-weight);
 
       ${mediaQuery.md`
-        font-size: 28px;
+        font-size: 24px;
       `}
     `}
 
@@ -94,6 +95,7 @@ const Text = styled.p`
     `}
 
     ${space}
+    ${typography}
 `;
 
 Text.defaultProps = {
