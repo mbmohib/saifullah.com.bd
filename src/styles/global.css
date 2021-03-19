@@ -1,65 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
 
 @font-face {
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/source-sans-pro-v14-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("/fonts/source-sans-pro-v14-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/source-sans-pro-v14-latin-regular.woff2")
-      format("woff2"),
+  src: url('/fonts/source-sans-pro-v14-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('/fonts/source-sans-pro-v14-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/source-sans-pro-v14-latin-regular.woff2')
+      format('woff2'),
     /* Super Modern Browsers */
-      url("/fonts/source-sans-pro-v14-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("/fonts/source-sans-pro-v14-latin-regular.ttf")
-      format("truetype"),
+      url('/fonts/source-sans-pro-v14-latin-regular.woff') format('woff'),
+    /* Modern Browsers */ url('/fonts/source-sans-pro-v14-latin-regular.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("/fonts/source-sans-pro-v14-latin-regular.svg#SourceSansPro")
-      format("svg"); /* Legacy iOS */
+      url('/fonts/source-sans-pro-v14-latin-regular.svg#SourceSansPro')
+      format('svg'); /* Legacy iOS */
 }
 /* source-sans-pro-600 - latin */
 @font-face {
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("/fonts/source-sans-pro-v14-latin-600.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("/fonts/source-sans-pro-v14-latin-600.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/source-sans-pro-v14-latin-600.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/source-sans-pro-v14-latin-600.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/source-sans-pro-v14-latin-600.ttf")
-      format("truetype"),
+  src: url('/fonts/source-sans-pro-v14-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('/fonts/source-sans-pro-v14-latin-600.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/source-sans-pro-v14-latin-600.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/source-sans-pro-v14-latin-600.woff')
+      format('woff'),
+    /* Modern Browsers */ url('/fonts/source-sans-pro-v14-latin-600.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("/fonts/source-sans-pro-v14-latin-600.svg#SourceSansPro")
-      format("svg"); /* Legacy iOS */
+      url('/fonts/source-sans-pro-v14-latin-600.svg#SourceSansPro')
+      format('svg'); /* Legacy iOS */
 }
 /* source-sans-pro-700 - latin */
 @font-face {
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/fonts/source-sans-pro-v14-latin-700.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("/fonts/source-sans-pro-v14-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/source-sans-pro-v14-latin-700.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/source-sans-pro-v14-latin-700.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/source-sans-pro-v14-latin-700.ttf")
-      format("truetype"),
+  src: url('/fonts/source-sans-pro-v14-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('/fonts/source-sans-pro-v14-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/source-sans-pro-v14-latin-700.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/source-sans-pro-v14-latin-700.woff')
+      format('woff'),
+    /* Modern Browsers */ url('/fonts/source-sans-pro-v14-latin-700.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("/fonts/source-sans-pro-v14-latin-700.svg#SourceSansPro")
-      format("svg"); /* Legacy iOS */
+      url('/fonts/source-sans-pro-v14-latin-700.svg#SourceSansPro')
+      format('svg'); /* Legacy iOS */
 }
 
 :root {
@@ -71,7 +72,8 @@
   --dark-color-2: #cdcdcd;
   --primary-color: #1d7e7a;
   --secondary-color: #effbfb;
-  --primary-font: "Source Sans Pro", sans-serif;
+  --tertiary-color: #eaf1f1;
+  --primary-font: 'Source Sans Pro', sans-serif;
   --normal-weight: 400;
   --semi-bold-weight: 600;
   --bold-weight: 700;
@@ -108,4 +110,134 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Custom CSS */
+.shadow-1 {
+  box-shadow: -8px -8px 16px #ffffff, 8px 8px 16px #b6dada;
+}
+.btn {
+  outline: 0;
+  border: none;
+  color: var(--primary-color);
+  font-weight: var(--bold-weight);
+  background: var(--secondary-color);
+  cursor: pointer;
+  box-shadow: -10px -10px 20px #ffffff, 5px 5px 10px #afd1d1;
+  border-radius: 8px;
+  font-weight: var(--semi-bold-weight);
+  font-family: var(--primary-font);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  padding: 8px 16px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.btn:hover,
+.btn:active {
+  box-shadow: -10px -10px 20px #ffffff, 5px 5px 10px #afd1d1,
+    inset 5px 5px 10px rgba(175, 209, 209, 0.4), inset -10px -10px 20px #ffffff;
+}
+.btn-small {
+  box-shadow: -10px -10px 20px #ffffff, 2px 2px 4px #afd1d1;
+  font-size: 20px;
+}
+.btn-secondary {
+  background: #ffffff;
+  box-shadow: -5px -5px 10px #effbfb, 5px 5px 10px #b6dada;
+}
+.layout {
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header {
+  background: linear-gradient(360deg, #effbfb 0%, #ffffff 100%);
+  position: absolute;
+  width: 100%;
+  opacity: 0.9;
+}
+.logo {
+  width: 27px;
+  height: 51px;
+}
+.hero {
+  height: 80vh;
+  background: top center / cover no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url('/images/hero-image-mobile.jpg');
+}
+.hero__content {
+  height: calc(90vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero__content:first-child {
+  margin-top: 100px;
+}
+.about__content {
+  display: grid;
+  column-gap: 4rem;
+  margin-top: 40px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    'thumb'
+    'content'
+    'footer';
+}
+.about__footer {
+  background: var(--secondary-color);
+  background: #effbfb;
+  border-radius: 10px;
+  padding: 16px 0;
+  box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.video__item {
+  background-size: cover;
+  background-position: center center;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+@screen sm {
+  .hero {
+    background-image: url('/images/hero-image.jpg');
+  }
+}
+
+@screen md {
+  .btn {
+    padding: 8px 24px;
+    font-size: 24px;
+    line-height: 1.6;
+  }
+  .logo {
+    width: 47px;
+    height: 71px;
+  }
+  .about__content {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+      'thumb content'
+      'thumb content'
+      'thumb content'
+      'footer footer';
+  }
+
+  .about__footer {
+    margin-top: 0;
+    grid-template-columns: 1fr 2fr;
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+    display: grid;
+    column-gap: 4rem;
+  }
 }

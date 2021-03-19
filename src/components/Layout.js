@@ -1,18 +1,6 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
-import { Header, Footer, SEO } from "./";
-
-const LayoutWrapper = styled.div`
-  background: var(--bg-color);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const Main = styled.div`
-  flex-grow: 1;
-`;
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Header, Footer, SEO } from './';
 
 export default function Layout({ title, children }) {
   const data = useStaticQuery(
@@ -30,11 +18,11 @@ export default function Layout({ title, children }) {
   return (
     <>
       <SEO title={title || data.site.siteMetadata.title} />
-      <LayoutWrapper>
+      <div className="layout">
         <Header />
-        <Main>{children}</Main>
+        <div className="flex-grow">{children}</div>
         <Footer />
-      </LayoutWrapper>
+      </div>
     </>
   );
 }

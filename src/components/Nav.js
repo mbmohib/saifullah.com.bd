@@ -1,36 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Button, Flex } from '../components';
 import { DownArrowSmall } from '../icons';
-import { mediaQuery } from '../styles';
-
-const Menu = styled.nav`
-  display: none;
-
-  ${mediaQuery.md`
-    display: flex;
-  `}
-`;
-
-const MenuItem = styled(Link)`
-  padding: 16px 24px;
-  color: var(--primary-color);
-  font-weight: var(--semi-bold-weight);
-  font-size: 20px;
-`;
 
 export default function Nav() {
   return (
     <div className="flex">
-      <Menu>
-        <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/">Contact Us</MenuItem>
-      </Menu>
+      <div className="none md:block">
+        <Link className="font-semibold text-primary py-2 px-3" to="/">
+          Home
+        </Link>
+        <Link className="font-semibold text-primary py-2 px-3" to="/">
+          Contact Us
+        </Link>
+      </div>
 
-      <Button size="small">
+      <button className="btn-small">
         EN <DownArrowSmall ml={2} />
-      </Button>
+      </button>
     </div>
   );
 }

@@ -1,21 +1,5 @@
-import styled, { css } from 'styled-components';
-import { mediaQuery } from '../styles';
+import React from 'react';
 
-const Container = styled.div`
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
-
-  ${({ fluid }) =>
-    fluid &&
-    css`
-      padding-left: 24px;
-      padding-right: 24px;
-    `}
-
-  ${mediaQuery.md`
-    max-width: ${({ fluid }) => !fluid && '1280px'}
-  `}
-`;
-
-export default Container;
+export default function Container({ children }) {
+  return <div className="md:container">{children}</div>;
+}

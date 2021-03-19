@@ -16,7 +16,6 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
     "gatsby-background-image": "^1.4.1",
     "gatsby-plugin-image": "^1.0.0",
@@ -24,13 +23,11 @@
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-sitemap": "^3.0.0",
-    "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.1"
+    "react-helmet": "^6.1.0"
   },
   "main": "gatsby-config.js",
   "devDependencies": {

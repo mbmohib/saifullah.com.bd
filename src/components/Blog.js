@@ -1,18 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import { DynamicImage } from '../components';
 import { RightArrow } from '../icons';
 import { Link } from 'gatsby';
 
-const BlogWrapper = styled.div`
-  background: #ffffff;
-  box-shadow: -8px -8px 16px #ffffff, 8px 8px 16px #b6dada;
-  border-radius: 8px;
-`;
-
 export default function Blog({ blog }) {
   return (
-    <BlogWrapper>
+    <div className="shadow-1 bg-white rounded-sm">
       <DynamicImage
         style={{ justifySelf: 'flex-end' }}
         src={blog.image}
@@ -28,6 +21,6 @@ export default function Blog({ blog }) {
           Read More <RightArrow className="ml-1" />
         </Link>
       </div>
-    </BlogWrapper>
+    </div>
   );
 }

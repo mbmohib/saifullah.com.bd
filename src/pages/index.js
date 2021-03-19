@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-  Layout,
-  Button,
-  Container,
-  Stat,
-  Blog,
-  DynamicImage,
-} from '../components';
+import { Layout, Container, Stat, Blog, DynamicImage } from '../components';
 import {
   RightArrow,
   Facebook,
@@ -17,10 +10,6 @@ import {
   Video,
 } from '../icons';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
-import { mediaQuery } from '../styles';
-import heroImage from '../images/background/hero-image.jpg';
-import heroImageMobile from '../images/background/hero-image-mobile.jpg';
 import BackgroundImage from 'gatsby-background-image';
 import { useBackgroundImage } from '../hooks';
 
@@ -100,77 +89,6 @@ const blogs = [
   },
 ];
 
-const Hero = styled.div`
-  height: 80vh;
-  background: top center / cover no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url(${heroImageMobile});
-
-  ${mediaQuery.sm`
-    background-image: url(${heroImage});
-  `}
-`;
-
-const HeroContent = styled.div`
-  height: calc(90vh - 100px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  p:first-child {
-    margin-top: 100px;
-  }
-`;
-
-const AboutContent = styled.div`
-  display: grid;
-  column-gap: 4rem;
-  margin-top: 40px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-    'thumb'
-    'content'
-    'footer';
-
-  ${mediaQuery.md`
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 2fr 2fr 1fr;
-    grid-template-areas:
-      "thumb content"
-      "thumb content"
-      "thumb content"
-      "footer footer";
-  `}
-`;
-
-const AboutFooter = styled.div`
-  background: var(--secondary-color);
-  background: #effbfb;
-  border-radius: 10px;
-  padding: 16px 0;
-  box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-
-  ${mediaQuery.md`
-    margin-top: 0;
-    grid-template-columns: 1fr 2fr;
-    grid-column: 1 / 3;
-    grid-row: 3 / 5;
-    display: grid;
-    column-gap: 4rem;
-  `}
-`;
-
-const VideoItem = styled(BackgroundImage)`
-  background-size: cover;
-  background-position: center center;
-  padding: 6rem 0;
-  text-align: center;
-`;
-
 export default function IndexPage() {
   const videoImages = useBackgroundImage([
     'video-01.jpg',
@@ -182,18 +100,18 @@ export default function IndexPage() {
   return (
     <Layout title="Abdul Hi Muhammad Saifullah">
       <BackgroundImage />
-      <Hero>
+      <div class="hero">
         <Container>
-          <HeroContent>
+          <div className="hero__content">
             <p className="text-xl text-white">Assalamu ‘Alaikum,</p>
             <p className="text-lg text-white">I’m</p>
             <p className="text-3xl font-semibold text-white">
               Abdul Hi Muhammad <br />
               Saifullah
             </p>
-          </HeroContent>
+          </div>
         </Container>
-      </Hero>
+      </div>
 
       <Container className="mt-8 md:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-3">
@@ -210,7 +128,7 @@ export default function IndexPage() {
           </div>
         </div>
 
-        <AboutContent>
+        <div className="about__content">
           <div className="z-50" style={{ gridArea: 'thumb' }}>
             <DynamicImage src="profile-pic.png" alt="Profile Image" />
           </div>
@@ -230,17 +148,17 @@ export default function IndexPage() {
               Read More <RightArrow className="ml-1" />
             </Link>
           </div>
-          <AboutFooter>
+          <div className="about__footer">
             <div style={{ gridArea: '1 / 2' }}>
               <div className="flex">
-                <Button>
+                <button className="btn">
                   <Facebook mr={2} />
                   Follow me
-                </Button>
-                <Button className="ml-3 md:ml-5">
+                </button>
+                <button className="btn ml-3 md:ml-5">
                   <Youtube className="mr-2" />
                   Subscribe
-                </Button>
+                </button>
               </div>
               <Link to="" className="mt-4">
                 <Email className="mt-3 mr-2" />
@@ -251,8 +169,8 @@ export default function IndexPage() {
                 <p className="text-lg font-semibold">01712-959706</p>
               </Link>
             </div>
-          </AboutFooter>
-        </AboutContent>
+          </div>
+        </div>
       </Container>
 
       <div className="bg-primary-light py-8 lg:py-10 xs:py-15 mt-10">
@@ -301,14 +219,17 @@ export default function IndexPage() {
       <Container className="mt-8 md:mt-10">
         <div className="flex justify-between mb-5">
           <p className="text-2xl text-primary">Featured Videos</p>
-          <Button color="secondary">View All</Button>
+          <button className="btn-secondary">View All</button>
         </div>
         <div className="grid gap-5 grid-cols-1 md:grid-cols-2">
           {videos.map((video, i) => (
             <a href={video.url} key={i}>
-              <VideoItem fluid={videoImages[i].node.childImageSharp.fluid}>
+              <BackgroundImage
+                className="video__item"
+                fluid={videoImages[i].node.childImageSharp.fluid}
+              >
                 <p className="text-xl text-primary-light">{video.title}</p>
-              </VideoItem>
+              </BackgroundImage>
             </a>
           ))}
         </div>
