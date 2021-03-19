@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Text, Container, Flex } from "../components";
+import React from 'react';
+import styled from 'styled-components';
+import { Container } from '../components';
 
 const FooterWrapper = styled.footer`
   background: var(--tertiary-color);
@@ -12,18 +12,14 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <Flex
-          textAlign={["center", "left"]}
-          justifyContent="space-between"
-          flexDirection={["column", "row"]}
-        >
-          <Text color="primary" variant="subtitle">
+        <div className="flex justify-between flex-col md:flex-row text-center md:text-left">
+          <p className="text-sm text-primary">
             © {new Date().getFullYear()} saifullah.com.bd
-          </Text>
-          <Text color="primary" variant="subtitle">
+          </p>
+          <p className="text-sm text-primary">
             Designed and Developed by MonKef.com
-          </Text>
-        </Flex>
+          </p>
+        </div>
       </Container>
     </FooterWrapper>
   );

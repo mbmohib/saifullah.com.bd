@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Text, DynamicImage, Link, Box } from "../components";
-import { RightArrow } from "../icons";
+import React from 'react';
+import styled from 'styled-components';
+import { DynamicImage } from '../components';
+import { RightArrow } from '../icons';
+import { Link } from 'gatsby';
 
 const BlogWrapper = styled.div`
   background: #ffffff;
@@ -13,26 +14,20 @@ export default function Blog({ blog }) {
   return (
     <BlogWrapper>
       <DynamicImage
-        style={{ justifySelf: "flex-end" }}
+        style={{ justifySelf: 'flex-end' }}
         src={blog.image}
         alt={blog.title}
       />
-      <Box py={4} px={4}>
-        <Text variant="paragraph1" mb={3} underline color="primary">
-          {blog.category}
-        </Text>
-        <Text variant="heading4" mb={1}>
-          {blog.title}
-        </Text>
-        <Text variant="subtitle" mb={2} color="primary">
-          {blog.date}
-        </Text>
-        <Text>{blog.content}</Text>
+      <div className="p-4">
+        <p className="mb-3 text-primary">{blog.category}</p>
+        <p className="text-lg mb-1">{blog.title}</p>
+        <p className="text-sm text-primary mb-2">{blog.date}</p>
+        <article>{blog.content}</article>
 
-        <Link mt={4} to={blog.url}>
-          Read More <RightArrow ml={1} />
+        <Link className="mt-4" to={blog.url}>
+          Read More <RightArrow className="ml-1" />
         </Link>
-      </Box>
+      </div>
     </BlogWrapper>
   );
 }

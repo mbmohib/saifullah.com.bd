@@ -1,9 +1,7 @@
-import React, { useMemo } from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import styled, { css } from "styled-components";
-import { space, layout } from "styled-system";
-import { Image } from "./";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React, { useMemo } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import styled, { css } from 'styled-components';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Img = styled(GatsbyImage)`
   max-width: 100%;
@@ -14,9 +12,6 @@ const Img = styled(GatsbyImage)`
       margin: 0 auto;
       display: block;
     `};
-
-  ${space};
-  ${layout};
 `;
 
 export default function GatsbyImageExtended({ src, ...rest }) {
@@ -48,8 +43,8 @@ export default function GatsbyImageExtended({ src, ...rest }) {
 
   const { node: { childImageSharp, publicURL, extension } = {} } = match;
 
-  if (extension === "svg" || !childImageSharp) {
-    return <Image src={publicURL} {...rest} />;
+  if (extension === 'svg' || !childImageSharp) {
+    return <img src={publicURL} {...rest} />;
   }
 
   return <Img image={childImageSharp.gatsbyImageData} {...rest} />;

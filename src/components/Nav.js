@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
-import { Button, Flex } from "../components";
-import { DownArrowSmall } from "../icons";
-import { mediaQuery } from "../styles";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { Button, Flex } from '../components';
+import { DownArrowSmall } from '../icons';
+import { mediaQuery } from '../styles';
 
 const Menu = styled.nav`
   display: none;
@@ -22,7 +22,7 @@ const MenuItem = styled(Link)`
 
 export default function Nav() {
   return (
-    <Flex>
+    <div className="flex">
       <Menu>
         <MenuItem to="/">Home</MenuItem>
         <MenuItem to="/">Contact Us</MenuItem>
@@ -31,6 +31,6 @@ export default function Nav() {
       <Button size="small">
         EN <DownArrowSmall ml={2} />
       </Button>
-    </Flex>
+    </div>
   );
 }

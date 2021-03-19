@@ -1,6 +1,5 @@
-import styled, { css } from "styled-components";
-import { space } from "styled-system";
-import { mediaQuery } from "../styles";
+import styled, { css } from 'styled-components';
+import { mediaQuery } from '../styles';
 
 const Container = styled.div`
   margin: 0 auto;
@@ -15,10 +14,8 @@ const Container = styled.div`
     `}
 
   ${mediaQuery.md`
-    max-width: ${({ fluid }) => !fluid && "1280px"}
+    max-width: ${({ fluid }) => !fluid && '1280px'}
   `}
-
-  ${space}
 `;
 
 export default Container;

@@ -1,7 +1,6 @@
-import React from "react";
-import { Text, Box, Flex } from "./";
-import styled from "styled-components";
-import { mediaQuery } from "../styles";
+import React from 'react';
+import styled from 'styled-components';
+import { mediaQuery } from '../styles';
 
 const StatWrapper = styled.div`
   background: var(--secondary-color);
@@ -23,15 +22,13 @@ const StatWrapper = styled.div`
 export default function Stat({ stat = {} }) {
   return (
     <StatWrapper>
-      <Flex width="100%" alignItems="center" justifyContent="center">
+      <div className="flex items-center justify-center w-full">
         {stat.icon}
-        <Box>
-          <Text variant="heading1" fontWeight="700" color="primary">
-            {stat.stat}
-          </Text>
-          <Text variant="heading4">{stat.label}</Text>
-        </Box>
-      </Flex>
+        <div>
+          <p className="text-2xl font-bold text-primary">{stat.stat}</p>
+          <p className="text-lg">{stat.label}</p>
+        </div>
+      </div>
     </StatWrapper>
   );
 }
