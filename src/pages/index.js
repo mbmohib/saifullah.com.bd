@@ -19,8 +19,8 @@ import {
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { mediaQuery } from '../styles';
-import heroImage from '../images/background/test-image.jpg';
-import heroImageMobile from '../images/background/test-image.jpg';
+import heroImage from '../images/background/hero-image.jpg';
+import heroImageMobile from '../images/background/hero-image-mobile.jpg';
 import BackgroundImage from 'gatsby-background-image';
 import { useBackgroundImage } from '../hooks';
 
