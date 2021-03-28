@@ -11,11 +11,17 @@ const StatWrapper = styled.div`
   padding: 40px 24px;
   min-width: 300px;
 
+  ${mediaQuery.md`
+    min-width: 350px;
+  `}
+
   ${mediaQuery.lg`
+    padding: 32px 16px;
     min-width: 300px;
   `}
 
   ${mediaQuery.xl`
+    padding: 40px 24px;
     min-width: 450px;
   `}
 `;

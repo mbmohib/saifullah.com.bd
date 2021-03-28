@@ -267,15 +267,14 @@ export default function IndexPage() {
         py={{ _: "80px", lg: "100px", xl: "150px" }}
         mt={10}
       >
-        <Box px={{ _: 2, lg: 4, xl: 6 }}>
+        <Box px={{ _: 2, xl: 6 }}>
           <Grid
-            gridGap={4}
-            gridTemplateColumns={[
-              "1fr",
-              "repeat(2, 1fr)",
-              null,
-              "repeat(4, 1fr)"
-            ]}
+            gridGap={{ _: 4, lg: 2, xl: 4 }}
+            gridTemplateColumns={{
+              _: "1fr",
+              sm: "repeat(2, 1fr)",
+              lg: "repeat(4, 1fr)"
+            }}
             justifyItems="center"
           >
             {stats.map((stat, i) => (

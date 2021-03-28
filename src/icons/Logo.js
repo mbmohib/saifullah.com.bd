@@ -1,35 +1,42 @@
 import React from "react";
 import withSVG from "./withSVG";
 
-function Logo() {
-  return (
-    <>
-      <path fill="url(#pattern0)" d="M0 0.44H47V70.52H0z"></path>
-      <defs>
-        <pattern
-          id="pattern0"
-          width="1"
-          height="1"
-          patternContentUnits="objectBoundingBox"
-        >
-          <use
-            transform="matrix(.02128 0 0 .01427 0 -.02)"
-            xlinkHref="#image0"
-          ></use>
-        </pattern>
-        <image
-          id="image0"
-          width="47"
-          height="73"
-          xlinkHref="data:image/png;base64,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"
-        ></image>
-      </defs>
-    </>
-  );
-}
+const Logo = () => (
+  <g fill="#1e7e7a">
+    <path
+      d="M214.3,99.5s-9.5,39.5,39,28.5c48-10.88,34.79-84.91-46.86-56.45a22.81,22.81,0,0,0-5,2.49c-99.13,65.38,21,149.23,81.91,197.63,23,18.24,24.42,43.9,10.17,57.83-.12,1,44.68-23.36,11.83-69.17C292.21,242,264.52,224.66,222.8,194c-88-67-24-129,27-104.54C275.8,104.5,219.3,130.67,214.3,99.5Z"
+      transform="translate(-125.77 -65.08)"
+    />
+    <path
+      d="M201.5,102.5c-.06,4.44-56.67,30.86,100,131.83,0,0,26.13-16.9-7.5-40.29C261.09,171.15,201.37,141,201.5,102.5Z"
+      transform="translate(-125.77 -65.08)"
+    />
+    <path
+      d="M171.5,185.5S162,217,246.5,259,295,382,258,357c0,0,59.45-16.17,3.5-59C209.54,258.23,128.56,238,171.5,185.5Z"
+      transform="translate(-125.77 -65.08)"
+    />
+    <path
+      d="M201.5,269s-13.5,14.5,45,36.5S247.5,410,213,339c0,0,16,13.67,25.67,12s29.33-23-21-42.33C184,292,200.15,269,200.15,269"
+      transform="translate(-125.77 -65.08)"
+    />
+    <path
+      d="M319.32,211.33s-3.65,28.67-10,29c0,0,37,47,19.34,93.67s-106,80-142.34,2c0,0-32.33,23-12.33-7.67s-23.33-43.66-27.33-13c0,0-26-22.33,10.66-60.33,0,0-59,20-15.66,76,0,0,.33,14,14.33,12.33,0,0,.58,29.59,29.67,13.34,0,0,64.66,91.43,149.66,4.55C395.67,292.33,319.32,211.33,319.32,211.33ZM157.12,331.81c-3.87-1.49-5.39-6.89-3.39-12.07s6.74-8.16,10.61-6.67,5.38,6.9,3.39,12.07S161,333.3,157.12,331.81Z"
+      transform="translate(-125.77 -65.08)"
+    />
+    <ellipse cx="45.6" cy="310.38" rx="6.88" ry="9.2" />
+    <ellipse cx="63.21" cy="323.84" rx="7.3" ry="9.77" />
+    <ellipse
+      cx="165.04"
+      cy="281.47"
+      rx="11.66"
+      ry="8.79"
+      transform="translate(-257.38 352.24) rotate(-84.22)"
+    />
+  </g>
+);
 
 export default withSVG(Logo, {
-  viewBox: "0 0 47 71",
+  viewBox: "0 0 232.77 333.61",
   width: "47",
   height: "71"
 });
