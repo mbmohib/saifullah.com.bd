@@ -21,7 +21,9 @@ export default function Footer() {
             © {new Date().getFullYear()} saifullah.com.bd
           </Text>
           <Text color="primary" variant="subtitle">
-            Designed and Developed by MonKef.com
+            Designed by{" "}
+            <a href="https://www.behance.net/nurshadrahman">Nurshad Rahman</a>,
+            Developed by <a href="https://monkef.com">MonKef.com</a>
           </Text>
         </Flex>
       </Container>
