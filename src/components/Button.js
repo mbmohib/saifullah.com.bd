@@ -9,7 +9,7 @@ const Button = styled.button`
   font-weight: var(--bold-weight);
   background: var(--secondary-color);
   cursor: pointer;
-  box-shadow: -3px -3px 12px #ffffff, 3px 3px 10px rgb(175 209 209 / 40%);
+  box-shadow: -10px -10px 20px #ffffff, 3px 3px 10px rgba(175, 209, 209, 0.6);
   border-radius: 8px;
   font-weight: var(--semi-bold-weight);
   font-family: var(--primary-font);
