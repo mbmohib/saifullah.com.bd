@@ -22,7 +22,7 @@ const StatWrapper = styled.div`
 
   ${mediaQuery.xl`
     padding: 40px 24px;
-    min-width: 450px;
+    min-width: 400px;
   `}
 `;
 

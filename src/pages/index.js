@@ -267,7 +267,7 @@ export default function IndexPage() {
       >
         <Box px={{ _: 2, xl: 6 }}>
           <Grid
-            gridGap={{ _: 4, lg: 2, xl: 4 }}
+            gridGap={{ _: 4, lg: 2, xl: 3 }}
             gridTemplateColumns={{
               _: "1fr",
               sm: "repeat(2, 1fr)",
