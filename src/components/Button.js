@@ -9,7 +9,7 @@ const Button = styled.button`
   font-weight: var(--bold-weight);
   background: var(--secondary-color);
   cursor: pointer;
-  box-shadow: -10px -10px 20px #ffffff, 5px 5px 10px #afd1d1;
+  box-shadow: -3px -3px 12px #ffffff, 3px 3px 10px rgb(175 209 209 / 40%);
   border-radius: 8px;
   font-weight: var(--semi-bold-weight);
   font-family: var(--primary-font);
@@ -44,7 +44,7 @@ const Button = styled.button`
     color === "secondary" &&
     css`
       background: #ffffff;
-      box-shadow: -5px -5px 10px #effbfb, 5px 5px 10px #b6dada;
+      box-shadow: -5px -5px 10px #effbfb, 4px 4px 8px rgba(182, 218, 218, 0.5);
     `}
 
   ${layout} 

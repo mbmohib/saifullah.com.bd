@@ -5,7 +5,8 @@ import { RightArrow } from "../icons";
 
 const BlogWrapper = styled.div`
   background: #ffffff;
-  box-shadow: -8px -8px 16px #ffffff, 8px 8px 16px #b6dada;
+  box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.5),
+    4px 4px 8px rgba(182, 218, 218, 0.5);
   border-radius: 8px;
 `;
 

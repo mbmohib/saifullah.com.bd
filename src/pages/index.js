@@ -151,7 +151,7 @@ const AboutFooter = styled.div`
   background: #effbfb;
   border-radius: 10px;
   padding: 16px 0;
-  box-shadow: -8px -8px 16px #effbfb, 8px 8px 20px #b6dada;
+  box-shadow: -8px -8px 16px #effbfb, 4px 4px 10px rgba(182, 218, 218, 0.5);
   display: flex;
   justify-content: center;
   margin-top: 40px;

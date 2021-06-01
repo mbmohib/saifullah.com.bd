@@ -5,7 +5,7 @@ import { mediaQuery } from "../styles";
 
 const StatWrapper = styled.div`
   background: var(--secondary-color);
-  box-shadow: -8px -8px 16px #ffffff, 8px 8px 16px #b6dada;
+  box-shadow: -6px -6px 18px #ffffff, 8px 8px 16px rgb(182 218 218 / 30%);
   border-radius: 10px;
   display: flex;
   padding: 40px 24px;
